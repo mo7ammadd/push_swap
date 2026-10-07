@@ -12,7 +12,7 @@ int	ft_strcmp(const char *s1, const char *s2)
 
 /**
  * Checks if a string is a valid integer.
- * Returns 1 if valid, 0 if invalid (contains characters, empty sign, or overflows).
+ * Returns 1 if valid, 0 if invalid (contains characters, empty sign).
  */
 int	is_valid_int(const char *str)
 {
