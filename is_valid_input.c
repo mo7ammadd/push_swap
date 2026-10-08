@@ -79,11 +79,11 @@ int argc_checker(int argc)
     return (1);
 }
 
-int dublicat_numbers(char **argv, int index)
+int dublicat_numbers(char **argv, int index, int start)
 {
     int    j;
 
-    j = 1;
+    j = start;
     //if (ft_atoi(argv[index]))
     while (j < index)
     {
@@ -294,17 +294,19 @@ int flags_checker(char **argv, int argc)
 int number_checker(char **argv, int argc)
 {
     int i;
-    int counter;
+    //int counter;
+    int start;
     //if (flags_checker(argv, argc))
-    i = flags_checker(argv, argc);
-    if (i < 0)
+    start = flags_checker(argv, argc);
+    if (start < 0)
         return (0);
-    counter = 0;
+        i = start;
+    //counter = 0;
     while (i < argc)
     {
          if (ft_strcmp(argv[i], "--bench") == 0 || ft_strcmp(argv[i], "--adaptive") == 0 || ft_strcmp(argv[i], "--simple") == 0 || ft_strcmp(argv[i], "--complex") == 0 || ft_strcmp(argv[i], "--medium") == 0)
          return (0);
-         if ( !is_valid_int(argv[i]) || !dublicat_numbers(argv, i))
+         if ( !is_valid_int(argv[i]) || !dublicat_numbers(argv, i, start))
          return (0);
          //counter++;
          i++;
