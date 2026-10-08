@@ -271,7 +271,7 @@ int flags_checker(char **argv, int argc)
             ans = dublicat_flags(argv, argv[i], i);
             if (ans == 0)
             {
-                return (0);
+                return (-1);
             }
             counter++;
         }
@@ -282,13 +282,13 @@ int flags_checker(char **argv, int argc)
     if (counter == 2)
     {
         if (!bench)
-        return (0);
+        return (-1);
 		else
 			return(2);
     }
     if (counter > 2)
     {
-        return (0);
+        return (-1);
     }
     return (counter);
 }
