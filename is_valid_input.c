@@ -283,6 +283,8 @@ int flags_checker(char **argv, int argc)
     {
         if (!bench)
         return (0);
+		else
+			return(2);
     }
     if (counter > 2)
     {
