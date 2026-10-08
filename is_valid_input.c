@@ -259,7 +259,7 @@ int flags_checker(char **argv, int argc)
     int    ans;
     int bench;
 
-    i = 0;
+    i = 1;
     counter = 0;
     bench = 0;
     while (i < argc)
