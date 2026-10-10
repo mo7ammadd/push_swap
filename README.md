@@ -1,3 +1,13 @@
 # push_swap
 YAZALAMEHH MARA MEN HONA
-ABO 3ADEL 3M YAZALAMEHH
+
+
+
+
+
+
+
+
+
+
+ABO 3ADEL متخاذل
