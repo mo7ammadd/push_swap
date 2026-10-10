@@ -87,7 +87,7 @@ int dublicat_numbers(char **argv, int index, int start)
     //if (ft_atoi(argv[index]))
     while (j < index)
     {
-        if (ft_atoi(argv[j] == ft_atoi(argv[index])))
+        if (ft_atoi(argv[j]) == ft_atoi(argv[index])) 
         return (0);
         j++;
     }
@@ -98,7 +98,7 @@ int dublicat_flags(char **argv, char *target, int index)
 {
     int j;
 
-    j = 0;
+    j = 1;
     while (j < index)
     {
         if (ft_strcmp(argv[j], target) == 0)
@@ -215,11 +215,12 @@ char **split_input(int argc, char **argv, int *new_argc)
         free(temp);
         i++;
     }
-    result = malloc(sizeof(char *) * (total + 1));
+    result = malloc(sizeof(char *) * (total + 2));
     if (!result)
         return (NULL);
+    result[0] = argv[0];
     i = 1;
-    k = 0;
+    k = 1;
     while (i < argc)
     {
         temp = ft_split(argv[i]);
@@ -236,7 +237,7 @@ char **split_input(int argc, char **argv, int *new_argc)
         i++;
     }
     result[k] = NULL;
-    *new_argc = total;
+    *new_argc = total + 1;
     return (result);
 }
 
@@ -283,14 +284,13 @@ int flags_checker(char **argv, int argc)
     {
         if (!bench)
         return (-1);
-		else
-			return(2);
+			return(3);
     }
     if (counter > 2)
     {
         return (-1);
     }
-    return (counter);
+    return (counter + 1);
 }
 
 int number_checker(char **argv, int argc)
@@ -302,7 +302,7 @@ int number_checker(char **argv, int argc)
     start = flags_checker(argv, argc);
     if (start < 0)
         return (0);
-        i = start;
+    i = start;
     //counter = 0;
     while (i < argc)
     {
