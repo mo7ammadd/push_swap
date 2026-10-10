@@ -11,13 +11,13 @@ typedef struct s_node
     struct s_node   *next;
 }   t_node;
 
-int     ft_strcmp(const char *s1, const char *s2);
-int     is_valid_int(const char *str);
-int     ft_atoi(const char *nptr);
-int     duplicate_numbers(char **argv, int index, int start);
-int     duplicate_flags(char **argv, char *target, int index);
-int     flags_checker(char **argv, int argc);
-int     number_checker(char **argv, int argc);
+int    ft_strcmp(const char *s1, const char *s2);
+int	    is_valid_int(const char *str);
+int    ft_atoi(const char *nptr);
+int    dublicat_numbers(char **argv, int index, int start);
+int    dublicat_flags(char **argv, char *target, int index);
+int    flags_checker(char **argv, int argc);
+int    number_checker(char **argv, int argc);
 int    argc_checker(int argc);
 int    word_count(char *str);
 char    *word_dup(char *str, int *i);
