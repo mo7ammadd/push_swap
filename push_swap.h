@@ -18,6 +18,12 @@ int     duplicate_numbers(char **argv, int index, int start);
 int     duplicate_flags(char **argv, char *target, int index);
 int     flags_checker(char **argv, int argc);
 int     number_checker(char **argv, int argc);
+int    argc_checker(int argc);
+int    word_count(char *str);
+char    *word_dup(char *str, int *i);
+char    **ft_split(char *str);
+char    **split_input(int argc, char **argv, int *new_argc);
+
 
 t_node  *create_node(int v);
 void    node_add_back(t_node **stack, t_node *new_node);
