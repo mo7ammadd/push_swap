@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ahobeida <ahobeida@learner.42.tech>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/10/12 10:11:55 by ahobeida          #+#    #+#             */
+/*   Updated: 2026/10/12 10:12:58 by ahobeida         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 #include <unistd.h>
 
@@ -44,6 +56,7 @@ int main(int argc, char **argv)
     int     new_argc;
     int     start;
     t_node  *a;
+    t_node  *b;
 
     if (!argc_checker(argc))
         return (0);
@@ -56,12 +69,13 @@ int main(int argc, char **argv)
         return (1);
     }
 
-        
+
     // when i call the function determine_way
     // i should create a t_node and i should
-    / give to it the value which returned from function build_stack
+    // give to it the value which returned from function build_stack
 
-    
+
+    b = NULL;
     start = flags_checker(split, new_argc);
     printf("flags count = %d, numbers start at index %d\n", start - 1, start);
     a = build_stack_a(split, new_argc, start);
