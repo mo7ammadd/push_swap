@@ -6,7 +6,7 @@
 /*   By: ahobeida <ahobeida@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/12 07:12:26 by ahobeida          #+#    #+#             */
-/*   Updated: 2026/10/12 07:53:51 by ahobeida         ###   ########.fr       */
+/*   Updated: 2026/10/12 11:01:01 by malnaam          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 int	determine_flag(char **argv, int argc)
 {
-	//this function i will call it after calling (number_checker) function
 	int	i;
 
 	i = 0;
@@ -22,51 +21,63 @@ int	determine_flag(char **argv, int argc)
 	{
 		if (ft_strcmp(argv[i], "--simple") == 0)
 			return (1);
-		else if (ft_strcmp(argv[i], "--medium") ==0)
+		else if (ft_strcmp(argv[i], "--medium") == 0)
 			return (2);
-		else if (ft_strcmpm(argv[i], "--complex") == 0)
+		else if (ft_strcmp(argv[i], "--complex") == 0)
 			return (3);
 		i++;
 	}
 	return (4);
 }
 
+static int	count_nodes(t_node *stack)
+{
+	int	sz;
+
+	sz = 0;
+	while (stack)
+	{
+		sz++;
+		stack = stack->next;
+	}
+	return (sz);
+}
+
+static int	count_mistakes(t_node *stack)
+{
+	t_node	*r;
+	int		mis;
+
+	mis = 0;
+	while (stack)
+	{
+		r = stack->next;
+		while (r)
+		{
+			if (stack->value > r->value)
+				mis++;
+			r = r->next;
+		}
+		stack = stack->next;
+	}
+	return (mis);
+}
+
 double	compute_disorder(t_node *stack)
 {
-	t_node	*c;
-	t_node	*r;
-	int 	mis;
 	int	sz;
 	int	total;
 
-	mis = 0;
-	sz = 0;
-	c = stack;
-	while (c)
-	{
-		sz++;
-		c = c -> next;
-	}
+	sz = count_nodes(stack);
 	total = sz * (sz - 1) / 2;
 	if (total == 0)
 		return (0.0);
-	c = stack;
-	while (c)
-	{
-		r = c -> next;
-		while (r)
-		{
-			if (c -> value > r -> value)
-				mis++;
-			r = r -> next;
-		}
-		c = c-> next;
-	}
-	return ((double)mis / total);
+	return ((double)count_mistakes(stack) / total);
 }
+
 int	determine_way(char **argv, int argc, t_node *stack)
 {
-	int	x;
+	int		x;
 	double	dis;
 
 	x = determine_flag(argv, argc);
@@ -75,7 +86,7 @@ int	determine_way(char **argv, int argc, t_node *stack)
 	dis = compute_disorder(stack);
 	if (dis < 0.2)
 		return (1);
-	else if (dis >= 0.2 && dis < 0.5)
+	else if (dis < 0.5)
 		return (2);
 	return (3);
 }

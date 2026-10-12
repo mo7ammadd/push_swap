@@ -12,11 +12,11 @@
 
 #include "push_swap.h"
 
-void execute_algorithm(int choice, t_node **stack_a)
+void	execute_algorithm(int choice, t_node **stack_a)
 {
 	choice = 1;
 	if (choice == 1)
-		sort_simple(stack_a); 
+		sort_simple(stack_a);
 	else if (choice == 2)
 		sort_medium(stack_a);
 	else if (choice == 3)
