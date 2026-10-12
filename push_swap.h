@@ -4,6 +4,7 @@
 # include <stdlib.h>
 # include <stdio.h>
 # include <limits.h>
+#include <unistd.h>
 
 typedef struct s_node
 {
@@ -30,4 +31,6 @@ t_node  *create_node(int v);
 void    node_add_back(t_node **stack, t_node *new_node);
 t_node  *build_stack_a(char **split_argv, int argc, int start);
 void set_index(t_node *stack);
+void execute_algorithm(int choice, t_node **stack_a);
+void sa(t_node **stack_a);
 #endif
