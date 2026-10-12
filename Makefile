@@ -1,7 +1,8 @@
 LIBNAME = push_swap.a
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
-SRCS = is_valid_input.c Stack_building.c ft_Execution.c Switching_movements.c determine_the_way.c
+SRCS = is_valid_input.c Stack_building.c ft_Execution.c Switching_movements.c determine_the_way.c helper.c
+
 OBJS = $(SRCS:.c=.o)
 
 all: $(LIBNAME)
