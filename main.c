@@ -55,6 +55,13 @@ int main(int argc, char **argv)
             free_split(split, new_argc);
         return (1);
     }
+
+        
+    // when i call the function determine_way
+    // i should create a t_node and i should
+    / give to it the value which returned from function build_stack
+
+    
     start = flags_checker(split, new_argc);
     printf("flags count = %d, numbers start at index %d\n", start - 1, start);
     a = build_stack_a(split, new_argc, start);
