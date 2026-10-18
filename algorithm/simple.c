@@ -14,53 +14,47 @@ int min_element(t_node *stack_a)
     }
     return (mn);
 }
-void    move_to_first(t_node **stack_a, int mn)
+void	move_to_first(t_node **stack_a, int mn)
 {
-    int index;
-    int len;
-    int f = 0;
-    t_node  *st;
-    t_node  *tt;
+	int		index;
+	int		len;
+	t_node	*tmp;
 
-    len = 0;
-    tt = *stack_a;
-    while(tt && !f)
-    {
-        len++;
-        tt = tt -> next;
-    }
-    while ((*stack_a) -> value != mn)
-    {
-        index = 0;
-        st = *stack_a;
-        while(st)
-        {
-            if(st -> value == mn)
-            {
-                if ((double)(index / len) > 0.5)
-                rra(&stack_a);
-                else
-                ra(&stack_a);
-                f = 1;
-                break;
-            }
-            index++;
-            st = st -> next;
-        }
-    }
+	len = 0;
+	index = 0;
+	tmp = *stack_a;
+	while (tmp)
+	{
+		if (tmp->value == mn)
+			break ;
+		index++;
+		tmp = tmp->next;
+	}
+	tmp = *stack_a;
+	while (tmp)
+	{
+		len++;
+		tmp = tmp->next;
+	}
+	while ((*stack_a)->value != mn)
+	{
+		if (index > len / 2)
+			rra(stack_a);
+		else
+			ra(stack_a);
+	}
 }
-void    simple_sort(t_node **stack_a, t_node **stack_b)
-{
-    int mn;
 
-    while (*stack_a)
-    {
-        mn = min_element(*stack_a);
-        move_to_first(&stack_a, mn);
-        pb(stack_a, stack_b);
-    }
-    while (*stack_b)
-    {
-        pa(stack_a, stack_b);
-    }
+void	sort_simple(t_node **stack_a, t_node **stack_b)
+{
+	int	mn;
+
+	while (*stack_a)
+	{
+		mn = min_element(*stack_a);
+		move_to_first(stack_a, mn);
+		pb(stack_a, stack_b);
+	}
+	while (*stack_b)
+		pa(stack_a, stack_b);
 }

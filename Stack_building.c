@@ -50,3 +50,26 @@ t_node	*build_stack_a(char **split_argv, int argc, int start)
 	}
 	return (stack_a);
 }
+
+
+void	set_index(t_node *stack)
+{
+	t_node	*current;
+	t_node	*compare;
+	int		count;
+
+	current = stack;
+	while (current != NULL)
+	{
+		count = 0;
+		compare = stack;
+		while (compare != NULL)
+		{
+			if (compare->value < current->value)
+				count++;
+			compare = compare->next;
+		}
+		current->index = count;
+		current = current->next;
+	}
+}
