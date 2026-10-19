@@ -52,7 +52,7 @@ static int	count_mistakes(t_node *stack)
 	while (stack)
 	{
 		r = stack->next;
-		while (r)
+		while (r)*stack_a
 		{
 			if (stack->value > r->value)
 				mis++;

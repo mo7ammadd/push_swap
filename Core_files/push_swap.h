@@ -48,6 +48,24 @@ t_node	*build_stack_a(char **split_argv, int argc, int start);
 void		set_index(t_node *stack);
 void		execute_algorithm(int choice, t_node **stack_a);
 
+/* algorithm/helper_algo.c */
+int		ft_max(t_node *stack_b);
+int		ft_len(t_node *stack);
+int		ft_sqrt(int number);
+
+/* algorithm/simple.c */
+int		min_element(t_node *stack_a);
+void		move_to_first(t_node **stack_a, int mn);
+void		sort_simple(t_node **stack_a, t_node **stack_b);
+
+/* algorithm/medium.c */
+int		range_calc(t_node *stack_a);
+void		sort_medium(t_node **stack_a, t_node **stack_b);
+void		push_to_a(t_node **stack_a, t_node **stack_b);
+
+/* algorithm/complex.c */
+void		sort_complex(t_node **stack_a, t_node **stack_b);
+
 /* operations */
 void		reverse_rotate_nodes(t_node **stack);
 void		rotate_nodes(t_node **stack);
