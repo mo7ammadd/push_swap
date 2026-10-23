@@ -25,6 +25,7 @@ void	sa(t_node **stack_a)
 	second->next = first;
 	*stack_a = second;
 	write(1, "sa\n", 3);
+	record_op(OP_SA);
 }
 
 void	ra(t_node **stack_a)
@@ -44,6 +45,7 @@ void	ra(t_node **stack_a)
 	last->next = first;
 	first->next = NULL;
 	write(1, "ra\n", 3);
+	record_op(OP_RA);
 }
 
 void	rra(t_node **stack_a)
@@ -63,6 +65,7 @@ void	rra(t_node **stack_a)
 	last->next = *stack_a;
 	*stack_a = last;
 	write(1, "rra\n", 4);
+	record_op(OP_RRA);
 }
 
 void	pb(t_node **stack_a, t_node **stack_b)
@@ -76,6 +79,7 @@ void	pb(t_node **stack_a, t_node **stack_b)
 	tmp->next = *stack_b;
 	*stack_b = tmp;
 	write(1, "pb\n", 3);
+	record_op(OP_PB);
 }
 
 void	pa(t_node **stack_a, t_node **stack_b)
@@ -89,6 +93,7 @@ void	pa(t_node **stack_a, t_node **stack_b)
 	tmp->next = *stack_a;
 	*stack_a = tmp;
 	write(1, "pa\n", 3);
+	record_op(OP_PA);
 }
 
 void	sb(t_node **stack_b)
@@ -104,6 +109,7 @@ void	sb(t_node **stack_b)
 	second->next = first;
 	*stack_b = second;
 	write(1, "sb\n", 3);
+	record_op(OP_SB);
 }
 
 void	rb(t_node **stack_b)
@@ -123,6 +129,7 @@ void	rb(t_node **stack_b)
 	last->next = first;
 	first->next = NULL;
 	write(1, "rb\n", 3);
+	record_op(OP_RB);
 }
 
 void	rrb(t_node **stack_b)
@@ -142,6 +149,7 @@ void	rrb(t_node **stack_b)
 	last->next = *stack_b;
 	*stack_b = last;
 	write(1, "rrb\n", 4);
+	record_op(OP_RRB);
 }
 
 void	ss(t_node **stack_a, t_node **stack_b)
@@ -149,6 +157,7 @@ void	ss(t_node **stack_a, t_node **stack_b)
 	swap_nodes(stack_a);
 	swap_nodes(stack_b);
 	write(1, "ss\n", 3);
+	record_op(OP_SS);
 }
 
 void	rr(t_node **stack_a, t_node **stack_b)
@@ -156,6 +165,7 @@ void	rr(t_node **stack_a, t_node **stack_b)
 	rotate_nodes(stack_a);
 	rotate_nodes(stack_b);
 	write(1, "rr\n", 3);
+	record_op(OP_RR);
 }
 
 void	rrr(t_node **stack_a, t_node **stack_b)
@@ -163,4 +173,5 @@ void	rrr(t_node **stack_a, t_node **stack_b)
 	reverse_rotate_nodes(stack_a);
 	reverse_rotate_nodes(stack_b);
 	write(1, "rrr\n", 4);
+	record_op(OP_RRR);
 }

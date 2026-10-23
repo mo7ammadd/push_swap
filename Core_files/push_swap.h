@@ -81,5 +81,20 @@ void		pa(t_node **stack_a, t_node **stack_b);
 void		ss(t_node **stack_a, t_node **stack_b);
 void		rr(t_node **stack_a, t_node **stack_b);
 void		rrr(t_node **stack_a, t_node **stack_b);
+typedef enum e_op
+{
+	OP_SA, OP_SB, OP_SS, OP_PA, OP_PB, OP_RA,
+	OP_RB, OP_RR, OP_RRA, OP_RRB, OP_RRR, OP_COUNT
+}	t_op;
 
+typedef struct s_stats
+{
+	int	count[OP_COUNT];
+	int	total;
+}	t_stats;
+
+t_stats	*get_stats(void);
+void	record_op(int op);
+int		is_bench(char **argv, int argc);
+void	print_bench(double dis, int choice, int adaptive);
 #endif
