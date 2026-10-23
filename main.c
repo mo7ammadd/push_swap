@@ -11,22 +11,6 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <unistd.h>
-
-static void	print_stack(t_node *s)
-{
-	int	i;
-
-	i = 0;
-	while (s)
-	{
-		printf("[%d] value = %d | index = %d\n", i, s->value, s->index);
-		s = s->next;
-		i++;
-	}
-	if (i == 0)
-		printf("(stack empty)\n");
-}
 
 static void	free_stack(t_node *s)
 {
@@ -44,39 +28,65 @@ static void	free_split(char **split, int new_argc)
 {
 	int	i;
 
-	i = 1; /* split[0] is argv[0], don't free it */
+	i = 1;
 	while (i < new_argc)
 		free(split[i++]);
 	free(split);
+}
+
+static int	is_sorted(t_node *s)
+{
+	while (s && s->next)
+	{
+		if (s->value > s->next->value)
+			return (0);
+		s = s->next;
+	}
+	return (1);
+}
+
+static int	run(char **split, int new_argc)
+{
+	t_node	*a;
+	t_node	*b;
+	int		start;
+	int		choice;
+	double	dis;
+
+	start = flags_checker(split, new_argc);
+	if (start >= new_argc)
+		return (1);
+	a = build_stack_a(split, new_argc, start);
+	if (!a)
+		return (0);
+	b = NULL;
+	set_index(a);
+	dis = compute_disorder(a);
+	choice = determine_way(split, new_argc, a);
+	if (!is_sorted(a))
+		execute_algorithm(choice, &a, &b);
+	if (is_bench(split, new_argc))
+		print_bench(dis, choice, determine_flag(split, new_argc) == 4);
+	free_stack(a);
+	free_stack(b);
+	return (1);
 }
 
 int	main(int argc, char **argv)
 {
 	char	**split;
 	int		new_argc;
-	int		start;
-	t_node	*a;
-	t_node	*b;
 
 	if (!argc_checker(argc))
 		return (0);
 	split = split_input(argc, argv, &new_argc);
-	if (!split || !number_checker(split, new_argc))
+	if (!split || !number_checker(split, new_argc) || !run(split, new_argc))
 	{
 		write(2, "Error\n", 6);
 		if (split)
 			free_split(split, new_argc);
 		return (1);
 	}
-	// when i call the function determine_way
-	// i should create a t_node and i should
-	// give to it the value which returned from function build_stack
-	b = NULL;
-	start = flags_checker(split, new_argc);
-	printf("flags count = %d, numbers start at index %d\n", start - 1, start);
-	a = build_stack_a(split, new_argc, start);
-	print_stack(a);
-	free_stack(a);
 	free_split(split, new_argc);
 	return (0);
 }

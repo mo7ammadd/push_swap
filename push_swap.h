@@ -46,7 +46,7 @@ t_node	*create_node(int v);
 void		node_add_back(t_node **stack, t_node *new_node);
 t_node	*build_stack_a(char **split_argv, int argc, int start);
 void		set_index(t_node *stack);
-void		execute_algorithm(int choice, t_node **stack_a);
+void		execute_algorithm(int choice, t_node **stack_a, t_node **stack_b);
 
 /* algorithm/helper_algo.c */
 int		ft_max(t_node *stack_b);
@@ -64,7 +64,7 @@ void		sort_medium(t_node **stack_a, t_node **stack_b);
 void		push_to_a(t_node **stack_a, t_node **stack_b);
 
 /* algorithm/complex.c */
-void		sort_complex(t_node **stack_a, t_node **stack_b);
+void    sort_complex(t_node **stack_a, t_node **stack_b);
 
 /* operations */
 void		reverse_rotate_nodes(t_node **stack);
@@ -97,4 +97,6 @@ t_stats	*get_stats(void);
 void	record_op(int op);
 int		is_bench(char **argv, int argc);
 void	print_bench(double dis, int choice, int adaptive);
+void	put_str(char *s);
+void	put_nbr(int n);
 #endif

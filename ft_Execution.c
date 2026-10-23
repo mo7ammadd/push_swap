@@ -1,24 +1,11 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_Execution.c                                     :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: malnaam <malnaam@learner.42.tech>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/12 08:00:56 by malnaam           #+#    #+#             */
-/*   Updated: 2026/10/12 08:21:06 by malnaam          ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "push_swap.h"
 
-void	execute_algorithm(int choice, t_node **stack_a)
+void	execute_algorithm(int choice, t_node **stack_a, t_node **stack_b)
 {
-	choice = 1;
 	if (choice == 1)
-		sort_simple(stack_a);
+		sort_simple(stack_a, stack_b);
 	else if (choice == 2)
-		sort_medium(stack_a);
-	else if (choice == 3)
-		sort_complex(stack_a);
+		push_to_a(stack_a, stack_b);
+	else
+		sort_complex(stack_a, stack_b);
 }

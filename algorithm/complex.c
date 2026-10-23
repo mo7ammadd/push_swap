@@ -1,10 +1,11 @@
 #include "push_swap.h"
+
 int num_of_op(int len)
 {
     int op;
 
     op = 0;
-    if(len = 1)
+    if(len == 1)
     {
         return (0);
     }
@@ -13,7 +14,7 @@ int num_of_op(int len)
     return (op);
 }
 
-void    complex_sort(t_node **stack_a, t_node **stack_b)
+void    sort_complex(t_node **stack_a, t_node **stack_b)
 {
     int len;
     int counter;
