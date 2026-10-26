@@ -1,6 +1,16 @@
-#include "push_swap.h"
-#include <limits.h>
-#include <stdlib.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   utils.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ahobeida <ahobeida@learner.42.tech>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/10/26 09:03:15 by ahobeida          #+#    #+#             */
+/*   Updated: 2026/10/26 09:03:24 by ahobeida         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "../push_swap.h"
 
 int	ft_strcmp(const char *s1, const char *s2)
 {

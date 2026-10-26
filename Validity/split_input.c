@@ -1,5 +1,16 @@
-#include "push_swap.h"
-#include <stdlib.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   split_input.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ahobeida <ahobeida@learner.42.tech>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/10/26 09:00:34 by ahobeida          #+#    #+#             */
+/*   Updated: 2026/10/26 09:00:47 by ahobeida         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "../push_swap.h"
 
 static int	count_total(int argc, char **argv)
 {
