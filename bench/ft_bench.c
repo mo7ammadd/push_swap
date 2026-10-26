@@ -30,7 +30,7 @@ void	record_op(int op)
 
 int	is_bench(char **argv, int argc)
 {
-	int i;
+	int	i;
 
 	i = 1;
 	while (i < argc && is_flag(argv[i]))

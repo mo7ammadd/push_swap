@@ -73,7 +73,7 @@ static void	put_ops(t_stats *s)
 
 void	print_bench(double dis, int choice, int adaptive)
 {
-	t_stats *s;
+	t_stats	*s;
 
 	s = get_stats();
 	put_disorder(dis);

@@ -28,10 +28,10 @@ int	num_of_op(int len)
 
 void	sort_complex(t_node **stack_a, t_node **stack_b)
 {
-	int len;
-	int counter;
-	int op;
-	int i;
+	int	len;
+	int	counter;
+	int	op;
+	int	i;
 
 	len = ft_len(*stack_a);
 	counter = 0;

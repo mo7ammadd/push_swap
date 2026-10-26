@@ -6,7 +6,7 @@
 /*   By: ahobeida <ahobeida@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/26 08:59:18 by ahobeida          #+#    #+#             */
-/*   Updated: 2026/10/26 08:59:20 by ahobeida         ###   ########.fr       */
+/*   Updated: 2026/10/26 09:20:48 by malnaam          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,28 +26,29 @@ int	min_element(t_node *stack_a)
 	}
 	return (mn);
 }
-void	move_to_first(t_node **stack_a, int mn)
-{
-	int		index;
-	int		len;
-	t_node	*tmp;
 
-	len = 0;
+static int	find_index(t_node *stack, int mn)
+{
+	int	index;
+
 	index = 0;
-	tmp = *stack_a;
-	while (tmp)
+	while (stack)
 	{
-		if (tmp->value == mn)
+		if (stack->value == mn)
 			break ;
 		index++;
-		tmp = tmp->next;
+		stack = stack->next;
 	}
-	tmp = *stack_a;
-	while (tmp)
-	{
-		len++;
-		tmp = tmp->next;
-	}
+	return (index);
+}
+
+void	move_to_first(t_node **stack_a, int mn)
+{
+	int	index;
+	int	len;
+
+	index = find_index(*stack_a, mn);
+	len = ft_len(*stack_a);
 	while ((*stack_a)->value != mn)
 	{
 		if (index > len / 2)
@@ -59,7 +60,7 @@ void	move_to_first(t_node **stack_a, int mn)
 
 void	sort_simple(t_node **stack_a, t_node **stack_b)
 {
-	int mn;
+	int	mn;
 
 	while (*stack_a)
 	{

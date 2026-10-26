@@ -24,7 +24,7 @@ void	put_str(char *s)
 
 void	put_nbr(int n)
 {
-	char c;
+	char	c;
 
 	if (n >= 10)
 		put_nbr(n / 10);

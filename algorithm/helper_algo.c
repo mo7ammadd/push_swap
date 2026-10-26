@@ -6,7 +6,7 @@
 /*   By: ahobeida <ahobeida@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/26 08:59:11 by ahobeida          #+#    #+#             */
-/*   Updated: 2026/10/26 08:59:13 by ahobeida         ###   ########.fr       */
+/*   Updated: 2026/10/26 09:15:36 by malnaam          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,9 +47,10 @@ int	ft_len(t_node *stack)
 	}
 	return (len);
 }
+
 int	ft_sqrt(int number)
 {
-	int i;
+	int	i;
 
 	if (number <= 0)
 		return (0);
