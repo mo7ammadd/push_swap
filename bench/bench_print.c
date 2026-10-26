@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   bench_print.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: malnaam <malnaam@learner.42.tech>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/10/26 08:55:19 by malnaam           #+#    #+#             */
+/*   Updated: 2026/10/26 08:55:21 by malnaam          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 static void	put_disorder(double dis)
@@ -61,7 +73,7 @@ static void	put_ops(t_stats *s)
 
 void	print_bench(double dis, int choice, int adaptive)
 {
-	t_stats	*s;
+	t_stats *s;
 
 	s = get_stats();
 	put_disorder(dis);

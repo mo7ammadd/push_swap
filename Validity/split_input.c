@@ -1,5 +1,5 @@
-#include <stdlib.h>
 #include "push_swap.h"
+#include <stdlib.h>
 
 static int	count_total(int argc, char **argv)
 {

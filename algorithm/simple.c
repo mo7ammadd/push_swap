@@ -1,18 +1,18 @@
 #include "push_swap.h"
 
-int min_element(t_node *stack_a)
+int	min_element(t_node *stack_a)
 {
-    int mn;
+	int	mn;
 
-    mn = stack_a -> value;
-    stack_a = stack_a -> next;
-    while(stack_a)
-    {
-        if(stack_a -> value < mn)
-        mn = stack_a -> value;
-        stack_a = stack_a -> next;
-    }
-    return (mn);
+	mn = stack_a->value;
+	stack_a = stack_a->next;
+	while (stack_a)
+	{
+		if (stack_a->value < mn)
+			mn = stack_a->value;
+		stack_a = stack_a->next;
+	}
+	return (mn);
 }
 void	move_to_first(t_node **stack_a, int mn)
 {
@@ -47,7 +47,7 @@ void	move_to_first(t_node **stack_a, int mn)
 
 void	sort_simple(t_node **stack_a, t_node **stack_b)
 {
-	int	mn;
+	int mn;
 
 	while (*stack_a)
 	{

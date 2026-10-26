@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Stack_building.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: malnaam <malnaam@learner.42.tech>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/10/26 08:56:55 by malnaam           #+#    #+#             */
+/*   Updated: 2026/10/26 08:56:56 by malnaam          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 t_node	*create_node(int v)
@@ -50,7 +62,6 @@ t_node	*build_stack_a(char **split_argv, int argc, int start)
 	}
 	return (stack_a);
 }
-
 
 void	set_index(t_node *stack)
 {

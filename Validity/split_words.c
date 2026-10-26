@@ -1,5 +1,5 @@
-#include <stdlib.h>
 #include "push_swap.h"
+#include <stdlib.h>
 
 int	word_count(char *str)
 {

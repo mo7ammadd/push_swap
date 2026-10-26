@@ -44,8 +44,8 @@ void	rotate_nodes(t_node **stack)
 
 void	reverse_rotate_nodes(t_node **stack)
 {
-	t_node *last;
-	t_node *last2;
+	t_node	*last;
+	t_node	*last2;
 
 	if (*stack == NULL || (*stack)->next == NULL)
 		return ;

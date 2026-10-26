@@ -1,6 +1,6 @@
+#include "push_swap.h"
 #include <limits.h>
 #include <stdlib.h>
-#include "push_swap.h"
 
 int	ft_strcmp(const char *s1, const char *s2)
 {
