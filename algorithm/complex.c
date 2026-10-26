@@ -21,7 +21,7 @@ void    sort_complex(t_node **stack_a, t_node **stack_b)
     int op;
     int i;
 
-    len = ft_len(*stack_a) - 1;
+    len = ft_len(*stack_a);
     counter = 0;
     op = num_of_op(len);
     while (counter < op)
