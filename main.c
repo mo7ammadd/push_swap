@@ -23,15 +23,6 @@ static int	is_sorted(t_node *s)
 	return (1);
 }
 
-static int	small_case(t_node **a, t_node **b)
-{
-	if (!is_sorted(*a))
-		execute_algorithm(1, a, b);
-	free_stack(*a);
-	free_stack(*b);
-	return (1);
-}
-
 static int	run(char **split, int new_argc)
 {
 	t_node	*a;
@@ -48,10 +39,10 @@ static int	run(char **split, int new_argc)
 		return (0);
 	b = NULL;
 	set_index(a);
-	if (ft_len(a) <= 5 && !is_bench(split, new_argc))
-		return (small_case(&a, &b));
 	dis = compute_disorder(a);
-	choice = determine_way(split, new_argc, a);
+	choice = 1;
+	if (ft_len(a) > 5)
+		choice = determine_way(split, new_argc, a);
 	if (!is_sorted(a))
 		execute_algorithm(choice, &a, &b);
 	if (is_bench(split, new_argc))

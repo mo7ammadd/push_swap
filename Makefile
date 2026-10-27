@@ -2,7 +2,7 @@ NAME	= push_swap
 CC		= cc
 CFLAGS	= -Wall -Wextra -Werror
 INC		= -I .
-SRCS	= main.c ft_Execution.c bench/ft_bench.c bench/bench_print.c \
+SRCS	= main.c free.c ft_Execution.c bench/ft_bench.c bench/bench_print.c \
 		bench/bench_utils.c Stack_building.c \
 		Validity/utils.c Validity/duplicates.c Validity/split_words.c \
 		Validity/split_input.c Validity/checkers.c \
