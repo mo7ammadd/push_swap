@@ -6,7 +6,7 @@
 /*   By: ahobeida <ahobeida@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/27 10:00:00 by ahobeida          #+#    #+#             */
-/*   Updated: 2026/10/27 10:00:00 by ahobeida         ###   ########.fr       */
+/*   Updated: 2026/10/28 07:49:25 by malnaam          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	free_stack(t_node *s)
 
 void	free_split(char **split, int new_argc)
 {
-	int	i;
+	int		i;
 
 	i = 1;
 	while (i < new_argc)

@@ -94,8 +94,8 @@ void				pa(t_node **stack_a, t_node **stack_b);
 void				ss(t_node **stack_a, t_node **stack_b);
 void				rr(t_node **stack_a, t_node **stack_b);
 void				rrr(t_node **stack_a, t_node **stack_b);
-void    free_stack(t_node *s);
-void    free_split(char **split, int new_argc);
+void				free_stack(t_node *s);
+void				free_split(char **split, int new_argc);
 typedef enum e_op
 {
 	OP_SA,
